@@ -13,10 +13,14 @@
 
     <%= render 'layouts/header' %>
 
-      <main>
-        <p id="notice"><%= notice %></p>
-        <%= yield %>
-      </main>
+    <% if user_signed_in? %>
+      <%= render 'search/search' %>
+    <% end %>
+
+    <main>
+      <p id="notice"><%= notice %></p> <!--要検証-->
+      <%= yield %>
+    </main>
 
     <%= render 'layouts/footer' %>
 

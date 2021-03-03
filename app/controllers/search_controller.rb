@@ -6,9 +6,16 @@ class SearchController < ApplicationController
     word = params[:search_word]
     target = params[:search_target]
 
-    if @posts = Serach.search(method, word, target)
-      binding.pry
-      a == 'aaa'
+    @posts = Serach.search(method, word, target)
+
+    if target == "target_user"
+      render "user_serach_result"
+    elsif target == "target_book"
+      render "book_serach_result"
+    else
+      redirect_back(fallback_location: root_path)
     end
+
   end
+
 end

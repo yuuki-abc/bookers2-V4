@@ -15,7 +15,7 @@ class Serach < ApplicationRecord
     end
 
     unless target == nil
-      
+
       if method == "forward_match"
         @posts = target.where("#{column} like ?","#{word}%") \
                         or where("#{column2} like ?","%#{word}%")
@@ -28,13 +28,12 @@ class Serach < ApplicationRecord
       elsif method == "partial_match"
         @posts = target.where("#{column} like ?","%#{word}%") \
                         or where("#{column2} like ?","%#{word}%")
-
       else
         @posts = target.all
       end
-      
+
     end
-    
+
   end
 
 end
