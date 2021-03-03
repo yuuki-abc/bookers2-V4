@@ -1,7 +1,9 @@
 class SearchController < ApplicationController
 
   def search
-    # binding.pry a == 'aaa'
+    binding.pry
+    a == 'aaa'
+    # params[:search]
   end
 
   def index
