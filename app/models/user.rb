@@ -18,4 +18,5 @@ class User < ApplicationRecord
   validates :introduction, presence: true, on: :update
   validates :introduction, length: { maximum: 50 } # 質問
 
+
 end
